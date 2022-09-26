@@ -1,0 +1,68 @@
+body {
+  background: #6c373f;
+  display: flex;
+  justify-content: center;
+}
+
+#alice-container {
+  width: 90vh;
+  display: grid;
+  place-items: center;
+  grid-template-areas:
+    "a1 . ."
+    ". a2 ."
+    ". . a3";
+}
+
+#alice1 {
+  grid-area: a1;
+}
+
+#alice2 {
+  grid-area: a2;
+}
+
+#alice3 {
+  grid-area: a3;
+}
+
+/* #alice {
+  animation: aliceTumbling infinite 3s linear;
+}
+@keyframes aliceTumbling {
+  0% {
+    color: #000;
+    transform: rotate(0) translate3D(-50%, -50%, 0);
+  }
+
+  30% {
+    color: #431236;
+  }
+
+  100% {
+    color: #000;
+    transform: rotate(360deg) translate3D(-50%, -50%, 0);
+  }
+}
+
+.tunnel {
+  animation: tunnelFly 1s linear infinite;
+  background:
+    url("http://rachelnabors.com/alice-in-videoland/book/img/bg-tunnel-border-left.svg") repeat-y,
+    url("http://rachelnabors.com/alice-in-videoland/book/img/bg-tunnel-border-right.svg") repeat-y 100% 100%,
+    url("http://rachelnabors.com/alice-in-videoland/book/img/bg_tunnel-specks.png"),
+    #6c373f;
+  margin: 0 auto;
+  height: calc(100% + 300px);
+  width: 60%;
+  min-width: 400px;
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+@keyframes tunnelFly {
+  100% {
+    transform: translate3D(0, -300px, 0);
+  }
+} */
+
