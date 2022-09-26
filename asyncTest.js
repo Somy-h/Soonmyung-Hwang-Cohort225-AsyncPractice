@@ -187,21 +187,62 @@
 // async function returns a promise
 //-------------------------------
 
-async function fetchProducts() {
-  try {
-    const response = await fetch('https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json');
-    if (!response.ok) {
-      throw new Error(`HTTP error: ${response.status}`);
-    }
-    const data = await response.json();
-    return data;
-  }
-  catch (error) {
-    console.error(`Could not get products: ${error}`);
-  }
+// async function fetchProducts() {
+//   try {
+//     const response = await fetch('https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json');
+//     if (!response.ok) {
+//       throw new Error(`HTTP error: ${response.status}`);
+//     }
+//     const data = await response.json();
+//     return data;
+//   }
+//   catch (error) {
+//     console.error(`Could not get products: ${error}`);
+//   }
+// }
+
+// fetchProducts()
+// .then((data) => console.log(data[0].name));
+
+
+
+
+//-------------------------------
+// Web API
+//-------------------------------
+// const getCountriesInfo = async () => {
+	// 	const api_url = "https://api.first.org/data/v1/countries";
+
+		
+	// 		const response = await fetch(api_url);
+	// 		var data = await response.json();
+	// 		console.log(data);
+	// }
+
+	// const getCitiesInfo = async (country) => {
+	// 	const api_url = "https://api.first.org/data/v1/countries";
+
+
+	// 	const response = await fetch(api_url);
+	// 	var data = await response.json();
+	// 	console.log(data);
+	// }
+	
+	//getCountriesInfo();
+
+
+
+//-------------------------------
+// Udemy: Error handling with fetch()
+//-------------------------------
+
+function handleErrors(res) {
+  if (!res.ok) throw new Error("HTTP ERROR: " + res.error);
+  return res;
 }
 
-fetchProducts()
-.then((data) => console.log(data[0].name));
-
-
+fetch('https://sdevcamper.io/api/v1/bootcamps/34343')
+.then(res => res.json())
+.then(handleErrors)
+.then(res => console.log(res.data))
+.catch(err => console.log("ERROR: " + err.message));
